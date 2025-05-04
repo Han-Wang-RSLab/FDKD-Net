@@ -11,92 +11,60 @@ If you find this project helpful, please consider giving it a star ⭐
 
 ![](/figs/overview.png)
 
-## Acknowledgment
-This implementation is bulit upon [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR/) and [AQT](https://github.com/weii41392/AQT).
+ We leave our system information for reference.
 
-## Installation
-Please refer to the instructions [here](https://github.com/fundamentalvision/Deformable-DETR/#installation). We leave our system information for reference.
+    python: 3.8.16
+    torch: 1.13.1+cu117
+    torchvision: 0.14.1+cu117
+    timm: 0.9.8
+    mmcv: 2.1.0
+    mmengine: 0.9.0
 
-* OS: Ubuntu 16.04
-* Python: 3.10.9
-* CUDA: 11.8
-* PyTorch: 2.0.1
-* torchvision: 0.15.2
+Other operating environments    
+
+pip install timm==0.9.8 thop efficientnet_pytorch==0.7.1 einops grad-cam==1.4.8 dill==0.3.6 albumentations==1.3.1 pytorch_wavelets==1.3.0 tidecv PyWavelets -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## Dataset Preparation
 Please construct the datasets following these steps:
 
 - Download the datasets from their sources. 
-You can download the processed xView and DOTA1.0 datasets from this Baidu Netdisk [link](https://pan.baidu.com/s/1G37LVIZVjt5UBBBV7LsjWw?pwd=6el9).
+You can download the processed xView and VisDrone-Datasets and HIT-UAV-Datasets  from this Web [link](https://github.com/VisDrone/VisDrone-Dataset) and [link](https://github.com/suojiashun/HIT-UAV-Infrared-Thermal-Dataset).
 
-- Convert the annotation files into COCO-format annotations.
+- Convert the annotation files into TXT-format annotations.
 
-- Modify the dataset path setting within the script [DAOD.py](./datasets/DAOD.py)
+- Modify the dataset path setting within the script.
 
 ```
 'dateset's name': {
     'train_img'  : '',  #train image dir
-    'train_anno' : '',  #train coco format json file
+    'train_Label' : '',  #train txt format label file
     'val_img'    : '',  #val image dir
-    'val_anno'   : '',  #val coco format json file
+    'val_label'   : '',  #val txt format label file
 },
 ```
 - Add domain adaptation direction within the script [__init__.py](./datasets/__init__.py). During training, the domain adaptation direction will be automatically parsed and corresponding data will be loaded. In our paper, we provide four adaptation directions for remote sensing scenarios.
 ```
-DAOD_dataset = [
-    'xView_to_DOTA',      #dateset's name1_to_dateset's name2
-    'UCASAOD_to_CARPK',
-    'CARPK_to_UCASAOD',
-    'HRRSD_to_SSDD',
-]
+
 ```
 
 ## Training / Evaluation / Inference
 We provide training script on single node as follows.
 - Training with single GPU
 ```
-python main.py --config_file {CONFIG_FILE}
+python train.py
 ```
-- Training with Multi-GPU
+- Valing with dataset
+python val.py
 ```
-CUDA_VISIBLE_DEVICES=={GPU_ids} ./tools/run_dist_launch.sh {GPU_num} python main.py --config_file {CONFIG_FILE}
-```
+- Self-distillation process 
+python distill.py
 
-We provide evaluation script to evaluate pre-trained model. 
-- Evaluation Model.
-```
-python evaluation.py --config_file {CONFIG_FILE} --opts EVAL True RESUME {CHECKPOINT_FILE}
-```
-- Evaluation EMA Model.
-```
-python evaluation.py --config_file {CONFIG_FILE} --opts EVAL True SSOD.RESUME_EMA {CHECKPOINT_FILE}
-```
-
-We provide inference script to visualize detection results. See [inference.py](inference.py) for details
-- Inference Model.
-```
-python inference.py --config_file {CONFIG_FILE} --img_dir {INPUT_IMAGE_DIR} --output_dir {SAVE_RESULT_DIR} --opts RESUME {CHECKPOINT_FILE}
-```
-- Inference EMA Model.
-```
-python inference_ema.py --config_file {CONFIG_FILE} --img_dir {INPUT_IMAGE_DIR} --output_dir {SAVE_RESULT_DIR} --opts SSOD.RESUME_EMA {CHECKPOINT_FILE}
-```
-
-## Pre-trained models
-We provide specific experimental configurations and pre-trained models to facilitate the reproduction of our results. 
-You can learn the details of Remote Sensing Teacher through the paper, and please cite our papers if the code is useful for your papers. Thank you!
-
-Task| Size (pixel) | Map50  | Config | Model 
-------------| ------------- | ------------- | -------------| -------------
-**xView to DOTA** | 800 | 63.3 | [cfg](./configs/r50_uda_xView2DOTA_b16.yaml) | [model](https://pan.baidu.com/s/1-jg-3vTAo06t7yNM3NU8WQ?pwd=w3x4)
-**UCAS-AOD to CARPK** | 800 | 76.2 | [cfg](./configs/r50_uda_UCASAOD2CARPK_b16.yaml) | [model](https://pan.baidu.com/s/15pdOhVHleLQUMAXiddx9zQ?pwd=gu2z)
-**CARPK to UCAS-AOD** | 800 | 75.6 | [cfg](./configs/r50_uda_CARPK2UCASAOD_b16.yaml) | [model](https://pan.baidu.com/s/11Z9YGkP0E2mTyT8itKzpfQ?pwd=x4si)
-**HRRSD to SSDD** | 600 | 58.5 | [cfg](./configs/r50_uda_HRRSD2SSDD_b16.yaml) | [model](https://pan.baidu.com/s/1e_k-nG26mBZiK0Y9hgk9BA?pwd=mx64)
-
+- get_COCO_metrice
+get_COCO_metrice.py
 ## Result Visualization 
 
-![](/figs/detect_result.png)
+![](/figs/experiment.png)
+## Demo prediction
 
-## Reference
-https://github.com/fundamentalvision/Deformable-DETR  
-https://github.com/weii41392/AQT
+![](/figs/prediction.png)
+

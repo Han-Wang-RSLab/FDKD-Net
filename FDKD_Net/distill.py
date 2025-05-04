@@ -1,4 +1,4 @@
-import warnings
+import warnings #Self-distillation process
 warnings.filterwarnings('ignore')
 import argparse, yaml, copy
 from ultralytics.models.rtdetr.distill import RTDETRDistiller
