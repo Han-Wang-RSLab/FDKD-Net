@@ -9,7 +9,7 @@ If you find this project helpful, please consider giving it a star ⭐
 ```
 
 
-![](/figs/overview.png)
+![]([/figs/overview.png](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/overview.png?raw=true))
 
  We leave our system information for reference.
 
