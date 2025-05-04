@@ -9,7 +9,7 @@ If you find this project helpful, please consider giving it a star ⭐
 ```
 
 
-![](/figs/overview.png)
+![overview.png](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/master/FDKD_Net/figs/overview.png)
 
  We leave our system information for reference.
 
@@ -54,17 +54,24 @@ We provide training script on single node as follows.
 python train.py
 ```
 - Valing with dataset
+```
 python val.py
 ```
 - Self-distillation process 
+```
 python distill.py
-
+```
 - get_COCO_metrice
+```
 get_COCO_metrice.py
+```
+
 ## Result Visualization 
+```
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/master/FDKD_Net/figs/experiment.png)
+```
 
-![](/figs/experiment.png)
 ## Demo prediction
-
+```
 ![](/figs/prediction.png)
-
+```
