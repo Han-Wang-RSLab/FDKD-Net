@@ -56,10 +56,12 @@ python train.py
 - Valing with dataset
 python val.py
 ```
-- Self-distillation process 
+- Self-distillation process
+```
 python distill.py
 ```
 - get_COCO_metrice
+```
 get_COCO_metrice.py
 ## Result Visualization 
 ```
