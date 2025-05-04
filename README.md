@@ -9,7 +9,7 @@ If you find this project helpful, please consider giving it a star ⭐
 ```
 
 
-![](/figs/overview.png)
+![](/FDKD-Net/figs/overview.png)
 
  We leave our system information for reference.
 
