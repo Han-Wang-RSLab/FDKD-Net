@@ -61,6 +61,7 @@ python distill.py
 ```
 - get_COCO_metrice
 get_COCO_metrice.py
+```
 ## Result Visualization 
 
 ![](/figs/experiment.png)
