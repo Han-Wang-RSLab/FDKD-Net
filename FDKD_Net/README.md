@@ -7,7 +7,7 @@ This repository contains the implementation accompanying our paper FDKD-Net: Dif
 If you find this project helpful, please consider giving it a star ⭐
 
 
-![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/overview.pdf)
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/overview.png)
 
  We leave our system information for reference.
 
