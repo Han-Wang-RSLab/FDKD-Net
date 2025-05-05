@@ -70,6 +70,6 @@ We conducted comparative experiments and ablation experiments, as well as variou
 
 
 ## Demo prediction
-```
-![](/figs/prediction.png)
-```
+
+![]([](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/Comparative%20experiment.pdf))
+
