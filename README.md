@@ -6,10 +6,8 @@ This repository contains the implementation accompanying our paper FDKD-Net: Dif
 
 If you find this project helpful, please consider giving it a star ⭐
 
-```
 
-
-![Overview](./figs/overview.png)
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/overview.png)
 
  We leave our system information for reference.
 
@@ -54,19 +52,24 @@ We provide training script on single node as follows.
 python train.py
 ```
 - Valing with dataset
+```
 python val.py
 ```
-- Self-distillation process
+- Self-distillation process 
 ```
 python distill.py
 ```
-- get_COCO_metrice
+- get_COCO_metrice method
 ```
 get_COCO_metrice.py
-## Result Visualization 
 ```
-![](/figs/experiment.png)
+
+## Result Visualization 
+We conducted comparative experiments and ablation experiments, as well as various comparative and ablation experiments during the self-distillation process using two datasets.
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/experiment.png)
+
+
 ## Demo prediction
 
-![](/figs/prediction.png)
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/prediction%20image.png)
 
