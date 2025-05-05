@@ -59,18 +59,14 @@ python val.py
 ```
 python distill.py
 ```
-- get_COCO_metrice
+- get_COCO_metrice method
 ```
 get_COCO_metrice.py
-```
-<<<<<<< HEAD
 
-=======
->>>>>>> 1be07be56748639f4f7369145d45f03632c50646
+
 ## Result Visualization 
-```
 ![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/master/FDKD_Net/figs/experiment.png)
-```
+
 
 ## Demo prediction
 ```
