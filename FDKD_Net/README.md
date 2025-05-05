@@ -64,9 +64,9 @@ python distill.py
 get_COCO_metrice.py
 ```
 
-
 ## Result Visualization 
-![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/master/FDKD_Net/figs/experiment.png)
+We conducted comparative experiments and ablation experiments, as well as various comparative and ablation experiments during the self-distillation process using two datasets.
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/experiment.png)
 
 
 ## Demo prediction
