@@ -71,5 +71,5 @@ We conducted comparative experiments and ablation experiments, as well as variou
 
 ## Demo prediction
 
-![]([](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/Comparative%20experiment.pdf))
+![](https://github.com/Han-Wang-RSLab/FDKD-Net/blob/main/FDKD_Net/figs/prediction.png）
 
